@@ -12,7 +12,6 @@ import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.w3c.dom.Text;
@@ -30,12 +29,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_one_listview);
         //textView1 =(TextView)findViewById(R.id.textView2);
-        listView = (ListView)findViewById(R.id.listView);
+        listView = (ListView) findViewById(R.id.listView);
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
-        adapter.add("Sidhart Kumar Tiwari");
-        adapter.add("Vedant Jaiswal");
-        adapter.add("Shikhar Panwar");
-        adapter.add("Shubhansu");
+        adapter.add("Sidhart Kumar Tiwari The BOSS");
+        adapter.add("Vedant Jaiswal Bhai Bhai");
+        adapter.add("Shikhar Panwar Chaman chomu");
+        adapter.add("Shubhansu Team Lead");
+        adapter.add("Suhani Neema Noob");
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
     }
@@ -44,13 +44,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         Item = adapter.getItem(i);
-        Toast.makeText(this, "You have selected " +Item, Toast.LENGTH_SHORT).show();
-
-        Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-        startActivity(intent);
-
+        Toast.makeText(this, "You have selected " + Item, Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(MainActivity.this, MainActivity2.class););
     }
-    /*public void Clickhandler(View view){
-        Toast.makeText(this,"",Toast.LENGTH_LONG).show();
-    }*/
 }
